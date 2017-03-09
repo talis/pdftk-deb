@@ -1,0 +1,8 @@
+version: "2"
+services:
+  pdftk:
+    build: .
+    volumes:
+      - /development/pdftk-deb/trusty/out:/out
+      
+    
