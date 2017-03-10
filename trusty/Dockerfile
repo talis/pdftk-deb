@@ -13,11 +13,10 @@ RUN cd pdftk-2.02-dist/pdftk && make -f Makefile.Debian install
 
 RUN mkdir -p /fpm/usr/local/bin
 RUN cp /usr/local/bin/pdftk /fpm/usr/local/bin
-RUN fpm -s dir -d "libgcc (>=0)" -d "libgcj14 (>=4.8)" -d "libc6 (>=2.14)" "-d libstdc++6 (>=0)" -t deb -n pdftk -v 2.02-4 usr/local/bin/pdftk
 
 RUN mkdir /out
 RUN ls -la /fpm
 
 WORKDIR /fpm
 
-CMD fpm -s dir -d "libgcc (>=0)" -d "libgcj14 (>=4.8)" -d "libc6 (>=2.14)" "-d libstdc++6 (>=0)" -t deb -n pdftk -v 2.02-4 usr/local/bin/pdftk && cp /fpm/*.deb /out
+CMD fpm -s dir -d "libgcc1 (>=0)" -d "libgcj14 (>=4.8)" -d "libc6 (>=2.14)" "-d libstdc++6 (>=0)" -t deb -n pdftk -v 2.02-4 usr/local/bin/pdftk && cp /fpm/*.deb /out
