@@ -19,4 +19,4 @@ RUN ls -la /fpm
 
 WORKDIR /fpm
 
-CMD fpm -s dir -d "libgcc1 (>=0)" -d "libgcj14 (>=4.8)" -d "libc6 (>=2.14)" "-d libstdc++6 (>=0)" -t deb -n pdftk -v 2.02-4 usr/local/bin/pdftk && cp /fpm/*.deb /out
+CMD fpm -s dir -d "libgcc1 (>=0)" -d "libgcj14 (>=4.8)" -d "libc6 (>=2.14)" "-d libstdc++6 (>=0)" -t deb -n pdftk -v 2.02-4-trusty-talis usr/local/bin/pdftk && cp /fpm/*.deb /out
