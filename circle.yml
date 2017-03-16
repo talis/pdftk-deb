@@ -1,0 +1,12 @@
+version: 2
+executorType: machine
+stages:
+  build:
+    workDir: ~/pdftk-deb
+    steps:
+      - type: checkout
+      - type: shell
+        name: Build image
+        command: |
+          cd trusty && docker-compose build
+          cd trusty && docker-compose run pdftk
