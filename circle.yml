@@ -4,6 +4,12 @@ stages:
   build:
     workDir: ~/pdftk-deb
     steps:
+      - type: shell
+        name: Prep /development
+        command: |
+          sudo mkdir /development
+          sudo chmod 777 /development
+          ln -s /home/circleci/pdftk-deb /development/pdftk-deb
       - type: checkout
       - type: shell
         name: Build image
@@ -11,3 +17,8 @@ stages:
           cd trusty
           docker-compose build
           docker-compose run pdftk
+      - type: shell
+        name: Show tree
+        command: sudo apt-get install -y tree && tree
+
+
