@@ -22,4 +22,4 @@ stages:
         command: sudo apt-get install -y tree && tree
       - type: shell
         name: Upload package
-        command: aws s3 cp ~/pdftk-deb/trusty/out/pdftk_2.02-4-trusty-talis_amd64.deb s3://aspire-operations/binaries/aptly/pdftk_2.02-4-trusty-talis_amd64.deb
+        command: aws s3 cp ~/pdftk-deb/trusty/out/pdftk_2.02-4-trusty-talis_amd64.deb $REPO/pdftk_2.02-4-trusty-talis_amd64.deb
